@@ -1,0 +1,7 @@
+certifi==2024.7.4
+cloudinary==1.40.0
+distinctid==1.0.4
+setuptools==70.3.0
+six==1.16.0
+urllib3==2.2.2
+wheel==0.43.0

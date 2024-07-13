@@ -1,0 +1,19 @@
+# fails
+mitmproxy --ssl-insecure --set keep_host_header=true \
+--set block_global=false \
+--mode reverse:https://api.cloudinary.com/@0.0.0.0:9500
+
+# passes, why?
+mitmproxy --ssl-insecure \
+--set keep_host_header=true \
+--set block_global=false \
+--mode reverse:https://api.cloudinary.com/@0.0.0.0:9500 \
+--modify-headers /~q/Host/api.cloudinary.com 
+
+# third one
+mitmproxy --ssl-insecure \
+--set keep_host_header=true \
+--set block_global=false \
+--mode reverse:https://api.cloudinary.com/@0.0.0.0:9500 \
+--modify-headers /~q/Host/api.cloudinary.com \
+--modify-headers /~q/Origin/
